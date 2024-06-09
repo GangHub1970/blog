@@ -1,5 +1,12 @@
+import Info from "@/components/Info";
+import Introduction from "@/components/Introduction";
 import React from "react";
 
 export default function AboutPage() {
-  return <>AboutPage</>;
+  return (
+    <>
+      <Info />
+      <Introduction />
+    </>
+  );
 }

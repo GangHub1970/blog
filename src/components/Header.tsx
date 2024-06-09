@@ -23,7 +23,7 @@ export default function Header() {
         className={`text-2xl font-bold cursor-pointer ${roboto.className}`}
         onClick={handleLogoClick}
       >
-        Gang's Blog
+        Gang&apos;s Blog
       </h1>
       <nav className="flex gap-4">
         <Link className={`${pathname === "/" ? "text-blue-500" : ""}`} href="/">

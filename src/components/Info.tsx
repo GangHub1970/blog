@@ -12,7 +12,7 @@ export default function Info() {
         className=" w-60 h-60 rounded-full"
       />
       <section className="text-center">
-        <p className="text-3xl font-bold">Hi, I'm Ellie</p>
+        <p className="text-3xl font-bold">Hi, I&apos;m Ellie</p>
         <p className="font-semibold">Full-stack engineer</p>
         <p>꿈을 코딩하는 사람, 드림코딩 엘리</p>
       </section>

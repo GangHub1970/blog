@@ -16,3 +16,9 @@ export async function getPosts(): Promise<Post[]> {
 
   return JSON.parse(data);
 }
+
+export async function getFeaturedPosts(): Promise<Post[]> {
+  const posts = await getPosts();
+
+  return posts.filter((post) => post.featured);
+}

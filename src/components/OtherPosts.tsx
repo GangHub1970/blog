@@ -23,7 +23,7 @@ export default function OtherPosts({ next, prev }: Props) {
   return (
     <section className="flex">
       <div
-        className="relative py-16 w-full text-center text-white cursor-pointer"
+        className="relative py-16 w-full text-center text-white cursor-pointer group"
         onClick={handlePrevClick}
       >
         <Image
@@ -37,11 +37,11 @@ export default function OtherPosts({ next, prev }: Props) {
         <p className="relative font-semibold z-10">{prev.description}</p>
         <FaArrowLeft
           size={32}
-          className="absolute left-8 top-0 bottom-0 my-auto text-yellow-400"
+          className="absolute left-8 top-0 bottom-0 my-auto text-yellow-400  duration-150 group-hover:translate-x-2"
         />
       </div>
       <div
-        className="relative py-16 w-full text-center text-white cursor-pointer"
+        className="relative py-16 w-full text-center text-white cursor-pointer group"
         onClick={handleNextClick}
       >
         <Image
@@ -55,7 +55,7 @@ export default function OtherPosts({ next, prev }: Props) {
         <p className="relative font-semibold z-10">{next.description}</p>
         <FaArrowRight
           size={32}
-          className="absolute right-8 top-0 bottom-0 my-auto text-yellow-400"
+          className="absolute right-8 top-0 bottom-0 my-auto text-yellow-400 duration-150 group-hover:-translate-x-2"
         />
       </div>
     </section>

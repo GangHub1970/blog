@@ -17,13 +17,19 @@ export async function getPosts(): Promise<Post[]> {
   return JSON.parse(data);
 }
 
+export async function getPost(postPath: string): Promise<Post> {
+  const posts = await getPosts();
+
+  return posts.find((post) => post.path === postPath) as Post;
+}
+
 export async function getFeaturedPosts(): Promise<Post[]> {
   const posts = await getPosts();
 
   return posts.filter((post) => post.featured);
 }
 
-export async function getPost(postPath: string) {
+export async function getMarkdownPost(postPath: string) {
   const filePath = path.join(
     process.cwd(),
     "public",

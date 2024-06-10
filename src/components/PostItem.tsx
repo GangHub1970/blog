@@ -1,6 +1,9 @@
+"use client";
+
 import React from "react";
 import { Post } from "@/service/posts";
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 
 type Props = {
   post: Post;
@@ -9,8 +12,16 @@ type Props = {
 export default function PostItem({
   post: { title, date, description, category, path },
 }: Props) {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(`/posts/${path}`);
+  };
   return (
-    <li className="rounded-md overflow-hidden shadow-md">
+    <li
+      className="rounded-md overflow-hidden shadow-md cursor-pointer hover:scale-105 duration-150"
+      onClick={handleClick}
+    >
       <Image
         src={`/images/posts/${path}.png`}
         alt={`${title} thumbnail`}

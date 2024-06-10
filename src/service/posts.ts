@@ -22,3 +22,16 @@ export async function getFeaturedPosts(): Promise<Post[]> {
 
   return posts.filter((post) => post.featured);
 }
+
+export async function getPost(postPath: string) {
+  const filePath = path.join(
+    process.cwd(),
+    "public",
+    "data",
+    "posts",
+    `${postPath}.md`
+  );
+  const data = await fs.readFile(filePath, "utf-8");
+
+  return data;
+}

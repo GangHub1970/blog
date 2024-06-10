@@ -17,12 +17,6 @@ export async function getPosts(): Promise<Post[]> {
   return JSON.parse(data);
 }
 
-export async function getPost(postPath: string): Promise<Post> {
-  const posts = await getPosts();
-
-  return posts.find((post) => post.path === postPath) as Post;
-}
-
 export async function getFeaturedPosts(): Promise<Post[]> {
   const posts = await getPosts();
 

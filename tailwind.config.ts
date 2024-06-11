@@ -14,21 +14,6 @@ const config: Config = {
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
-    keyframes: {
-      next: {
-        "0%, 100%": {
-          transform: "translateX(-55%)",
-          // "animation-timing-function": "cubic-bezier(0.8,0,1,1)",
-        },
-        "50%": {
-          transform: "none",
-          // "animation-timing-function": "cubic-bezier(0,0,0.2,1)",
-        },
-      },
-    },
-    animation: {
-      next: "next .5s ease-in-out",
-    },
   },
   plugins: [require("@tailwindcss/typography")],
 };

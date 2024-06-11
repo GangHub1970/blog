@@ -1,63 +1,25 @@
 "use client";
 
-import React, { ChangeEvent, useState } from "react";
+import React, { useState } from "react";
+import Form from "./Form";
+
+export type ShowToastType = {
+  isShow: boolean;
+  message: string;
+};
 
 export default function EmailForm() {
-  const [formData, setFormData] = useState({
-    email: "",
-    subject: "",
+  const [showToast, setShowToast] = useState<ShowToastType>({
+    isShow: false,
     message: "",
   });
 
-  const handleFromChange = (
-    event: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { value, id } = event.target;
-    setFormData((prev) => ({ ...prev, [id]: value }));
-  };
   return (
-    <article className="p-4 mx-auto my-20 max-w-[36rem] w-full bg-blue-950 rounded-lg">
-      <form className="flex flex-col gap-4">
-        <div className="flex flex-col gap-1">
-          <label htmlFor="email" className="font-semibold text-white">
-            Your Email
-          </label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            className="p-1 outline-none rounded-sm"
-            value={formData.email}
-            onChange={handleFromChange}
-          />
-        </div>
-        <div className="flex flex-col gap-1">
-          <label htmlFor="subject" className="font-semibold text-white">
-            Subject
-          </label>
-          <input
-            type="subject"
-            id="subject"
-            name="subject"
-            className="p-1 outline-none rounded-sm"
-            value={formData.subject}
-            onChange={handleFromChange}
-          />
-        </div>
-        <div className="flex flex-col gap-1">
-          <label htmlFor="message" className="font-semibold text-white">
-            Message
-          </label>
-          <textarea
-            rows={10}
-            name="message"
-            id="message"
-            className="p-1 outline-none rounded-sm"
-            value={formData.message}
-            onChange={handleFromChange}
-          />
-        </div>
-      </form>
+    <article className="flex flex-col items-center gap-4 mt-8">
+      {showToast.isShow && (
+        <p className="px-4 py-2 bg-green-200 rounded">{showToast.message}</p>
+      )}
+      <Form setShowToast={setShowToast} />
     </article>
   );
 }

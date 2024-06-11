@@ -54,6 +54,7 @@ export default function Form({ setShowToast }: Props) {
           Your Email
         </label>
         <input
+          required
           type="email"
           id="email"
           name="email"
@@ -67,6 +68,7 @@ export default function Form({ setShowToast }: Props) {
           Subject
         </label>
         <input
+          required
           type="subject"
           id="subject"
           name="subject"
@@ -80,6 +82,7 @@ export default function Form({ setShowToast }: Props) {
           Message
         </label>
         <textarea
+          required
           rows={10}
           name="message"
           id="message"
